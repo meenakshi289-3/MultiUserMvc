@@ -1,0 +1,32 @@
+﻿@model MultiUserMvc.Models.LoginCls
+@{
+    ViewBag.Title = "Login_pageload";
+}
+
+<h2>Login_pageload</h2>
+<div>
+    @using (Html.BeginForm("Login_Click", "Login", FormMethod.Post))
+    {
+        <div>
+            <label>username</label>
+        </div>
+        <div>
+            @Html.TextBoxFor(m => m.username)
+            @Html.ValidationMessageFor(m => m.username)
+        </div>
+        <div>
+            <label>password</label>
+        </div>
+        <div>
+            @Html.PasswordFor(m => m.pass)
+
+        </div>
+        <div>
+            <input type="submit" value="login" />
+            @Html.DisplayFor(m => m.msg)
+        </div>
+    }
+
+
+</div>
+
